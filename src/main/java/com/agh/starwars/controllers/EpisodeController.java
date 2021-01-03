@@ -26,9 +26,4 @@ public class EpisodeController {
         return episodeRepository.findById(title)
                 .orElseThrow(() -> new ResourceNotFoundException("No character with this name found"));
     }
-
-    @GetMapping("/{character}")
-    List<Episode> getAllCharactersEpisode(@PathVariable String character){
-        return episodeRepository.findAllByCharacter(character);
-    }
 }

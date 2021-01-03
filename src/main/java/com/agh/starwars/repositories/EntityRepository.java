@@ -8,14 +8,12 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 import java.util.Optional;
 
-@RepositoryRestResource(path = "characters")
+@RepositoryRestResource(path = "entities")
 public interface EntityRepository extends Repository<Entity, String> {
     List<Entity> findAll();
 
     Optional<Entity> findById(String id);
 
     @Query("MATCH (e:Episode {title: $episode}) <-[:WAS_IN]- (e:Entity) RETURN e")
-    List<Entity> findAllCharactersFromEpisode(String episode);
-
-
+    List<Entity> findAllCharacters(String episode);
 }

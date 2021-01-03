@@ -29,6 +29,6 @@ public class EntityController {
 
     @GetMapping ("/{episode}")
     List<Entity> getAllCharactersFromEpisode(@PathVariable String episode){
-        return entityRepository.findAllCharactersFromEpisode(episode);
+        return entityRepository.findAllCharacters(episode);
     }
 }
