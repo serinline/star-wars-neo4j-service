@@ -12,4 +12,6 @@ public interface EpisodeRepository extends Repository<Episode, String> {
     List<Episode> findAll();
 
     Optional<Episode> findById(String title);
+
+    void save(Episode episode);
 }
